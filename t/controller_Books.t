@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::More;
 
-
+BEGIN { $ENV{MYAPP_CONFIG_LOCAL_SUFFIX}="testing" }
 use Catalyst::Test 'MyApp';
 use MyApp::Controller::Books;
 
