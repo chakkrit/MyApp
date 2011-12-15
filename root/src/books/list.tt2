@@ -15,7 +15,11 @@
       <tr>
         <td>[% book.title %]</td>
         <td>[% book.rating %]</td>
-        <td></td>
+        <td>
+          [% tt_authors = []; tt_authors.push(author.last_name) FOREACH author = book.authors %]
+          ([% tt_authors.size | html %])
+          [% tt_authors.join(', ') | html %]
+        </td>
       </tr>
 [% END %]
 </table>
